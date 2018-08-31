@@ -18,7 +18,7 @@ import os
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path
-from content.views import IndexView
+from content.views import IndexView, PageView
 from django.conf.urls.static import static
 
 urlpatterns = [
@@ -28,4 +28,5 @@ print(os.path.join(settings.BASE_DIR, 'static'))
 if settings.DEBUG:
     urlpatterns += static('/static/', document_root=os.path.join(settings.BASE_DIR, 'static'))
 
+urlpatterns.append(path('<slug:slug>/', PageView.as_view()))
 urlpatterns.append(path('', IndexView.as_view()))

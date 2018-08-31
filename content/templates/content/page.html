@@ -1,0 +1,8 @@
+{% extends "content/base.html" %}
+{% block content %}
+<h1 class="uk-article-title">{{ page.title }}</h1>
+
+<div class="main-content">
+    {{ page.content|safe }}
+</div>
+{% endblock %}

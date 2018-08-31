@@ -16,6 +16,10 @@ class Page(models.Model):
         blank=True, null=True
     )
 
+    is_private = models.BooleanField(
+        default=False
+    )
+
     def __str__(self):
         return self.title
 

@@ -2,6 +2,7 @@
 env/
 main/settings_local.py
 media/
+db/
 *.log
 *.pot
 *.pyc
