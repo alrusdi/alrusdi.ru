@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static "css/uikit.min.css" %}" />
+    <script src="{% static "js/uikit.min.js" %}"></script>
+    <script src="{% static "js/uikit-icons.min.js" %}"></script>
+</head>
+<body>
+<article class="uk-article">
+    <h1 class="uk-article-title">{{ page.title }}</h1>
+
+    <div class="main-content">
+        {{ page.content|safe }}
+    </div>
+</article>
+</body>
+</html>
