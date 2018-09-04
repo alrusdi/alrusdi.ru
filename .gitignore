@@ -2,7 +2,9 @@
 env/
 main/settings_local.py
 media/
+static/build/
 db/
+node_modules/
 *.log
 *.pot
 *.pyc

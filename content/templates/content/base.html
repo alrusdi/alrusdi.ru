@@ -10,9 +10,27 @@
     <script src="{% static "js/uikit-icons.min.js" %}"></script>
 </head>
 <body>
-<article class="uk-article">
-    {% block content %}
-    {% endblock %}
-</article>
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <nav class="uk-navbar uk-margin-large-bottom">
+        <ul class="uk-navbar-nav uk-hidden-small">
+            <li>
+                <a href="/admin/">Admin</a>
+            </li>
+            <li>
+                {% if request.user.is_anonymous %}
+                <a href="/admin/login/?next=/">Log-in</a>
+                {% else %}
+                <a href="/admin/logout/">Log-out ({{ request.user.username }})</a>
+                {% endif %}
+            </li>
+        </ul>
+        <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+    </nav>
+
+    <article class="uk-article">
+        {% block content %}
+        {% endblock %}
+    </article>
+</div>
 </body>
 </html>
