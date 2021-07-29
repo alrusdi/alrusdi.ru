@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+from tinymce.models import HTMLField
 
 
 class Page(models.Model):
@@ -12,7 +12,7 @@ class Page(models.Model):
         max_length=250,
     )
 
-    content = models.TextField(
+    content = HTMLField(
         blank=True, null=True
     )
 

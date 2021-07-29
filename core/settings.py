@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     'content',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -129,5 +129,34 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+
+TMC_PLUGINS = [
+    "advlist", "autolink", "lists", "link", "image", "charmap", "preview", "anchor",
+    "searchreplace", "visualblocks", "fullscreen",  "insertdatetime", "media", "table", "paste",
+    "link", "code", "help"
+]
+
+TMC_TOOLBAR_ITEMS = [
+    "preview",
+    "|",
+    "undo", "redo",
+    "|",
+    "bold", "italic", "underline",
+    "|",
+    "alignleft", "aligncenter", "alignright", "alignjustify",
+    "|",
+    "bullist", "numlist", "anchor", "link",
+    "|",
+    "removeformat", "code"
+]
+
+TINYMCE_DEFAULT_CONFIG = {
+    "theme": "silver",
+    "min_height": 350,
+    "menubar": "format table",
+    "statusbar": False,
+    "plugins": ",".join(TMC_PLUGINS),
+    "toolbar": " ".join(TMC_TOOLBAR_ITEMS),
+}
 
 

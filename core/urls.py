@@ -17,14 +17,17 @@ import os
 
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path
-from content.views import IndexView, PageView
+from django.urls import path, include
 from django.conf.urls.static import static
 
+
+from content.views import IndexView, PageView
+
 urlpatterns = [
-    path('admin/', admin.site.urls)
+    path('tinymce/', include('tinymce.urls')),
+    path('admin/', admin.site.urls),
 ]
-print(os.path.join(settings.BASE_DIR, 'static'))
+
 if settings.DEBUG:
     urlpatterns += static('/static/', document_root=os.path.join(settings.BASE_DIR, 'static'))
 
