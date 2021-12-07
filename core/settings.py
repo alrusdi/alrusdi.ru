@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Application definition
 
@@ -122,7 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    # os.path.join(os.path.join(BASE_DIR, 'static')),
+    os.path.join(os.path.join(BASE_DIR, 'static')),
 ]
 
 STATICFILES_FINDERS = [
