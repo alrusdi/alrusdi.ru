@@ -1,0 +1,8 @@
+{% extends "content/base.html" %}
+{% block content %}
+    <h1 class="uk-article-title">{{ page.title }}{% if request.user.is_authenticated %}<a href="/admin/content/page/{{ page.pk }}/change/" class="uk-icon-link" uk-icon="file-edit"></a>{% endif %}</h1>
+
+<div class="main-content">
+    {{ page.content|safe }}
+</div>
+{% endblock %}
